@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:weight_tracker/presentation/controller/home/home_bloc.dart';
 import 'package:weight_tracker/presentation/controller/home/home_state.dart';
 
-import '../../../core/utils/enum.dart';
+import '../../../../core/utils/enum.dart';
 class UserDataComponent extends StatelessWidget {
   const UserDataComponent({Key? key}) : super(key: key);
 

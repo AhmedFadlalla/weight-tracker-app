@@ -7,9 +7,9 @@ import 'package:weight_tracker/domain/entities/base_weight_data.dart';
 import 'package:weight_tracker/presentation/controller/home/home_event.dart';
 import 'package:weight_tracker/presentation/controller/home/home_state.dart';
 import 'package:weight_tracker/presentation/screens/component/compenent.dart';
-import 'package:weight_tracker/presentation/screens/home_screen/sign_out_bottom_component.dart';
-import 'package:weight_tracker/presentation/screens/home_screen/user_data_component.dart';
-import 'package:weight_tracker/presentation/screens/home_screen/weight_data_component.dart';
+import 'package:weight_tracker/presentation/screens/home_screen/home_screen_component/sign_out_bottom_component.dart';
+import 'package:weight_tracker/presentation/screens/home_screen/home_screen_component/user_data_component.dart';
+import 'package:weight_tracker/presentation/screens/home_screen/home_screen_component/weight_data_component.dart';
 
 import '../../../core/services/cach_helper.dart';
 import '../../../core/services/service_locator.dart';

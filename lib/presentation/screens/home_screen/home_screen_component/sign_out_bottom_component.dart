@@ -5,9 +5,9 @@ import 'package:weight_tracker/presentation/controller/auth/auth_event.dart';
 import 'package:weight_tracker/presentation/controller/auth/auth_state.dart';
 import 'package:weight_tracker/presentation/screens/component/compenent.dart';
 
-import '../../../core/services/service_locator.dart';
-import '../../controller/auth/auth_bloc.dart';
-import '../login_screen.dart';
+import '../../../../core/services/service_locator.dart';
+import '../../../controller/auth/auth_bloc.dart';
+import '../../login_screen.dart';
 class SignOutBottomComponent extends StatelessWidget {
   const SignOutBottomComponent({Key? key}) : super(key: key);
 
