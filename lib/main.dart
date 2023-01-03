@@ -44,9 +44,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    if (uId != null) {
-      uId = CachHelper.getData(key: "uId");
-    }
+    uId ==null? CachHelper.getData(key: "uId"):null;
     return MultiBlocProvider(
       providers: [
         BlocProvider(

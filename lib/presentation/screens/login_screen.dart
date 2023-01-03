@@ -60,7 +60,7 @@ class LoginScreen extends StatelessWidget {
           if(state is SignInAnonymouslySuccessState){
             CachHelper.saveData(key: "uId", value: state.uId).then((value) {
               showToast(text: "Login Successfully", state: ToastStates.SUCCESS);
-              navigateTo(context, const HomeScreen());
+              navigateAndFinish(context, const HomeScreen());
             });
           }
         });

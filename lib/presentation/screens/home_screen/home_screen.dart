@@ -19,13 +19,12 @@ import '../../controller/home/home_bloc.dart';
 import 'add_weight_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+
+  const HomeScreen({Key? key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (uId != null) {
-      uId = CachHelper.getData(key: "uId");
-    }
+    uId ??= CachHelper.getData(key: "uId");
     return BlocConsumer<HomeBloc, BaseHomeState>(
       builder: (context, state) {
         return ScreenUtilInit(

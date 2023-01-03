@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lottie/lottie.dart';
 import 'package:weight_tracker/presentation/controller/home/home_bloc.dart';
 import 'package:weight_tracker/presentation/controller/home/home_state.dart';
 import 'package:flutter/material.dart';
@@ -20,37 +21,42 @@ class WeightDataComponent extends StatelessWidget {
                 stream: state.weightData,
                 builder: (context,snapShot){
                   if(snapShot.hasData){
-                    return ListView.separated(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, index) => Container(
-                          height: 50.h,
-                          decoration: BoxDecoration(
-                            color: Colors.grey.shade300,
-                            borderRadius: BorderRadius.circular(15.r),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: Text(
-                                    "${snapShot.data![index].weight}",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .subtitle1,
+                    if(snapShot.data!.isNotEmpty){
+                      return ListView.separated(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) => Container(
+                            height: 50.h,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade300,
+                              borderRadius: BorderRadius.circular(15.r),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      "${snapShot.data![index].weight}",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .subtitle1,
+                                    ),
                                   ),
-                                ),
-                                Text("${snapShot.data![index].dateTime.toDate()}")
-                              ],
+                                  Text("${snapShot.data![index].dateTime.toDate()}")
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        separatorBuilder: (context, index) => SizedBox(
-                          height: 10.h,
-                        ),
-                        itemCount: snapShot.data!.length);
-                  }else{
+                          separatorBuilder: (context, index) => SizedBox(
+                            height: 10.h,
+                          ),
+                          itemCount: snapShot.data!.length);
+                    }else{
+                      return Lottie.asset("assets/lottie/empty.json");
+                    }
+                  }
+                  else{
                     return const Center(child: CircularProgressIndicator());
                   }
 
